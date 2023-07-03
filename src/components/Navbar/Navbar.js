@@ -153,9 +153,9 @@ export const Navbar = () => {
             src="/logo.png"
             alt=""
             style={{
-              width: '46px',
-              height: '29px',
-              filter: `${themeId == 'dark' && 'invert(1)'} `,
+              width: '60px',
+              height: '45px',
+              filter: `${themeId == 'dark' ? 'invert(1)' : 'invert(0)'} `,
             }}
           />
           {/* <Monogram highlight /> */}
