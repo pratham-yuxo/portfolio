@@ -148,11 +148,21 @@ export const Navbar = () => {
           aria-label="Hamish Williams, Designer"
           onClick={handleMobileNavClick}
         >
-          <Monogram highlight />
+          <img
+            className={styles.logoP}
+            src="/logo.png"
+            alt=""
+            style={{
+              width: '46px',
+              height: '29px',
+              filter: `${themeId == 'dark' && 'invert(1)'} `,
+            }}
+          />
+          {/* <Monogram highlight /> */}
         </a>
       </RouterLink>
       <NavToggle onClick={() => dispatch({ type: 'toggleMenu' })} menuOpen={menuOpen} />
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} he`}>
         <div className={styles.navList}>
           {navLinks.map(({ label, pathname }) => (
             <RouterLink href={pathname} scroll={false} key={label}>

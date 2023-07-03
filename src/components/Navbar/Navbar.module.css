@@ -23,6 +23,9 @@
   }
 }
 
+.logoP{
+  color: white;
+}
 .logo {
   display: flex;
   position: relative;
