@@ -14,6 +14,7 @@ import { useRouter } from 'next/router';
 import { Fragment, createContext, useEffect, useReducer } from 'react';
 import { msToNum } from 'utils/style';
 import { ScrollRestore } from '../layouts/App/ScrollRestore';
+import dynamic from 'next/dynamic';
 
 export const AppContext = createContext({});
 
@@ -85,4 +86,4 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default App;
+export default dynamic(() => Promise.resolve(App), { ssr: false });
