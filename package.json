@@ -43,7 +43,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.146.0",
-    "three-stdlib": "^2.18.1"
+    "three-stdlib": "^2.18.1",
+    "uuid": "^9.0.0"
   },
   "scripts": {
     "dev": "next dev",
