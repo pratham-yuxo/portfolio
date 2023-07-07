@@ -17,7 +17,7 @@ import { Profile } from 'layouts/Home/Profile';
 import { ProjectSummary } from 'layouts/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
-
+// import Tech from './Tech';
 const disciplines = [
   'WebDeveloper',
   'Problem Solver',
@@ -80,6 +80,7 @@ export const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
+      {/* <Tech /> */}
       <ProjectSummary
         id="project-1"
         sectionRef={projectOne}

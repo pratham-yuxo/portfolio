@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @custom-media --mediaDesktop (max-width: 2080px);
 @custom-media --mediaLaptop (max-width: 1680px);
 @custom-media --mediaTablet (max-width: 1040px);
