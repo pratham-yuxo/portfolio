@@ -1,6 +1,5 @@
 import 'layouts/App/reset.css';
 import 'layouts/App/global.css';
-
 import { Navbar } from 'components/Navbar';
 import { ThemeProvider } from 'components/ThemeProvider';
 import { tokens } from 'components/ThemeProvider/theme';
@@ -59,6 +58,7 @@ const App = ({ Component, pageProps }) => {
               Skip to main content
             </VisuallyHidden>
             <Navbar />
+            <div className={`bl dekho bg-red-800`}>hfio</div>
             <main className={styles.app} tabIndex={-1} id="MainContent">
               <AnimatePresence exitBeforeEnter>
                 <m.div
@@ -87,3 +87,4 @@ const App = ({ Component, pageProps }) => {
 };
 
 export default dynamic(() => Promise.resolve(App), { ssr: false });
+// export default App;
