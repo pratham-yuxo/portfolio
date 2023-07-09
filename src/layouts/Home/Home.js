@@ -18,6 +18,7 @@ import { ProjectSummary } from 'layouts/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 import Tech from 'components/Tech';
+import { Section } from 'components/Section';
 
 const disciplines = [
   'WebDeveloper',
@@ -81,7 +82,10 @@ export const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-      <Tech />
+      <div className="flex flex-col items-center justify-center mt-20">
+        <div className="text-3xl font-bold ">My TechStack</div>
+        <Tech />
+      </div>
       <ProjectSummary
         id="project-1"
         sectionRef={projectOne}
@@ -102,6 +106,7 @@ export const Home = () => {
           ],
         }}
       />
+
       <ProjectSummary
         id="project-2"
         alternate
@@ -147,6 +152,7 @@ export const Home = () => {
           ],
         }}
       />
+
       <Profile
         sectionRef={details}
         visible={visibleSections.includes(details.current)}

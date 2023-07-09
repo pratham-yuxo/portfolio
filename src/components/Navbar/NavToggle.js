@@ -21,5 +21,6 @@ export const NavToggle = ({ menuOpen, ...rest }) => {
         />
       </div>
     </Button>
+    // <></>
   );
 };

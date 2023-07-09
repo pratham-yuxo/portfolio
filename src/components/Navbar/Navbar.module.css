@@ -155,7 +155,7 @@
   transition-duration: var(--durationL);
   transition-timing-function: var(--bezierFastoutSlowin);
   display: none;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(16px);

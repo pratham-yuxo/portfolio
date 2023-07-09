@@ -1,5 +1,10 @@
+const { join } = require('path');
+
 module.exports = {
   plugins: {
+    tailwindcss: {
+      config: join(__dirname, 'tailwind.config.js'),
+    },
     'postcss-flexbugs-fixes': {},
     'postcss-preset-env': {
       autoprefixer: {
@@ -9,7 +14,7 @@ module.exports = {
       features: {
         'nesting-rules': true,
         'custom-media-queries': {
-          importFrom: 'src/layouts/App/global.css',
+          importFrom: 'src/layouts/App/globals.css',
         },
       },
     },

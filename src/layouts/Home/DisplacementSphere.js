@@ -103,7 +103,7 @@ export const DisplacementSphere = props => {
     dirLight.position.y = 100;
 
     lights.current = [dirLight, ambientLight];
-    scene.current.background = new Color(...rgbToThreeColor(rgbBackground));
+    // scene.current.background = new Color(...rgbToThreeColor(rgbBackground));
     lights.current.forEach(light => scene.current.add(light));
 
     return () => {

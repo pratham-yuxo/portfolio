@@ -1,5 +1,5 @@
 import 'layouts/App/reset.css';
-import 'layouts/App/global.css';
+import '../layouts/App/globals.css';
 import { Navbar } from 'components/Navbar';
 import { ThemeProvider } from 'components/ThemeProvider';
 import { tokens } from 'components/ThemeProvider/theme';
@@ -14,7 +14,6 @@ import { Fragment, createContext, useEffect, useReducer } from 'react';
 import { msToNum } from 'utils/style';
 import { ScrollRestore } from '../layouts/App/ScrollRestore';
 import dynamic from 'next/dynamic';
-
 export const AppContext = createContext({});
 
 const repoPrompt = `
@@ -58,7 +57,6 @@ const App = ({ Component, pageProps }) => {
               Skip to main content
             </VisuallyHidden>
             <Navbar />
-            <div className={`bl dekho bg-red-800`}>hfio</div>
             <main className={styles.app} tabIndex={-1} id="MainContent">
               <AnimatePresence exitBeforeEnter>
                 <m.div
