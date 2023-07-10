@@ -4,7 +4,9 @@ import { StarsCanvas } from 'components/canvas';
 export const Cont = () => {
   return (
     <div className="bg-black">
-      <Contact />
+      <div className="relative z-10">
+        <Contact />
+      </div>
       <StarsCanvas />
     </div>
   );
