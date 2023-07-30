@@ -195,7 +195,11 @@ li {
   transform-origin: center;
   animation: flap 0.4s ease-in infinite alternate;
 }
-
+@media (min-width: 1041px) {
+  #project-2 > div > :nth-child(2) {
+    left: 150px;
+  }
+}
 @keyframes flap {
   50% {
     transform: scaleX(-1) rotate(-45deg) translate(-40px, -40px);

@@ -1,4 +1,4 @@
-import ArrowDown from 'assets/arrow-down.svg';
+// import ArrowDown from 'assets/arrow-down.svg';
 import { DecoderText } from 'components/DecoderText';
 import { Heading } from 'components/Heading';
 import { Section } from 'components/Section';
@@ -125,7 +125,7 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                 onClick={handleScrollClick}
               >
                 <VisuallyHidden>Scroll to projects</VisuallyHidden>
-                <ArrowDown aria-hidden />
+                {/* <ArrowDown aria-hidden /> */}
               </a>
             </RouterLink>
           </Fragment>

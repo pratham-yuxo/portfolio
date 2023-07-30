@@ -1,13 +1,13 @@
-import gamestackTexture2Large from 'assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from 'assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from 'assets/gamestack-list.jpg';
-import gamestackTextureLarge from 'assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from 'assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from 'assets/gamestack-login.jpg';
-import sliceTextureLarge from 'assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
-import sliceTexture from 'assets/slice-app.jpg';
-import sprTextureLarge from 'assets/spr-lesson-builder-dark-large.jpg';
+// import gamestackTexture2Large from 'assets/gamestack-list-large.jpg';
+// import gamestackTexture2Placeholder from 'assets/gamestack-list-placeholder.jpg';
+// import gamestackTexture2 from 'assets/gamestack-list.jpg';
+// import gamestackTextureLarge from 'assets/gamestack-login-large.jpg';
+// import gamestackTexturePlaceholder from 'assets/gamestack-login-placeholder.jpg';
+// import gamestackTexture from 'assets/gamestack-login.jpg';
+// import sliceTextureLarge from 'assets/slice-app-large.jpg';
+// import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
+// import sliceTexture from 'assets/slice-app.jpg';
+// import sprTextureLarge from 'assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from 'assets/spr-lesson-builder-dark.jpg';
 import { Footer } from 'components/Footer';
@@ -18,8 +18,8 @@ import { ProjectSummary } from 'layouts/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 import Tech from 'components/Tech';
-import { Section } from 'components/Section';
-
+import blog from 'assets/blog.png';
+import newsapp from 'assets/newsapp.png';
 const disciplines = [
   'WebDeveloper',
   'Problem Solver',
@@ -91,16 +91,16 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
+        title="Connect: A messaging app"
+        description="Welcome to my cutting-edge messaging web app, where seamless communication meets sleek design! "
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="https://github.com/pratham-yuxo/Messaging_App"
         model={{
           type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
+          alt: 'connect messaging app',
           textures: [
             {
-              srcSet: [sprTexture, sprTextureLarge],
+              srcSet: [sprTexture],
               placeholder: sprTexturePlaceholder,
             },
           ],
@@ -113,22 +113,22 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
+        title="Blog now"
         description="Design and development for a video game tracking app built in React Native"
         buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonLink="https://blog-website-with-graphql-and-next-js.vercel.app/"
         model={{
-          type: 'phone',
-          alt: 'App login screen',
+          type: 'laptop',
+          alt: 'home of blog page',
           textures: [
             {
-              srcSet: [gamestackTexture, gamestackTextureLarge],
-              placeholder: gamestackTexturePlaceholder,
+              srcSet: [blog],
+              placeholder: blog,
             },
-            {
-              srcSet: [gamestackTexture2, gamestackTexture2Large],
-              placeholder: gamestackTexture2Placeholder,
-            },
+            // {
+            //   srcSet: [gamestackTexture2, gamestackTexture2Large],
+            //   placeholder: gamestackTexture2Placeholder,
+            // },
           ],
         }}
       />
@@ -146,8 +146,8 @@ export const Home = () => {
           alt: 'Annotating a biomedical image in the Slice app',
           textures: [
             {
-              srcSet: [sliceTexture, sliceTextureLarge],
-              placeholder: sliceTexturePlaceholder,
+              srcSet: [newsapp],
+              placeholder: sprTexturePlaceholder,
             },
           ],
         }}
