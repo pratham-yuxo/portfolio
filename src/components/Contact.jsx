@@ -1,14 +1,25 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { DecoderText } from 'components/DecoderText';
+import { Heading } from 'components/Heading';
+import { Divider } from 'components/Divider';
+import { Input } from 'components/Input';
+import cstyles from './Contact.module.css';
+import { useFormInput } from 'hooks';
 
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
+import { tokens } from 'components/ThemeProvider/theme';
+import { cssProps, msToNum, numToMs } from 'utils/style';
 
 const Contact = () => {
   const formRef = useRef();
+  const initDelay = tokens.base.durationS;
+  const email = useFormInput('');
+  const message = useFormInput('');
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -64,49 +75,67 @@ const Contact = () => {
       );
   };
 
+  function getDelay(delayMs, offset = numToMs(0), multiplier = 1) {
+    const numDelay = msToNum(delayMs) * multiplier;
+    return cssProps({ delay: numToMs((msToNum(offset) + numDelay).toFixed(0)) });
+  }
+
   return (
-    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
+    <div
+      className={`md:mt-14 min-w-[900px]:ml-16 flex min-[900px]:flex-row flex-col-reverse overflow-hidden`}
+    >
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
-
+        <Heading
+          className={styles.title}
+          data-status={status}
+          level={3}
+          as="h1"
+          style={getDelay(tokens.base.durationXS, initDelay, 0.3)}
+        >
+          <DecoderText text="Say hello" start={status !== 'exited'} delay={300} />
+        </Heading>
+        <Divider
+          className={`${styles.divider} mt-5`}
+          data-status={status}
+          style={getDelay(tokens.base.durationXS, initDelay, 0.4)}
+        />
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your good name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your web address?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
-            <textarea
-              rows={7}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What you want to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
+          <Input
+            required
+            multiline
+            className={styles.input}
+            data-status={status}
+            style={getDelay(tokens.base.durationS, initDelay)}
+            autoComplete="off"
+            label="Name"
+            maxLength={4096}
+            {...message}
+          />
+          <Input
+            required
+            className={styles.input}
+            data-status={status}
+            style={getDelay(tokens.base.durationXS, initDelay)}
+            autoComplete="email"
+            label="Your Email"
+            type="email"
+            maxLength={512}
+            {...email}
+          />
+          <Input
+            required
+            multiline
+            className={styles.input}
+            data-status={status}
+            style={getDelay(tokens.base.durationS, initDelay)}
+            autoComplete="off"
+            label="Message"
+            maxLength={4096}
+            {...message}
+          />
 
           <button
             type="submit"
@@ -119,7 +148,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="xl:flex-1 flex justify-center xl:h-auto md:h-[450px] lg:h-[550px] h-[350px]"
       >
         <EarthCanvas />
       </motion.div>
