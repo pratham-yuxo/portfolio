@@ -240,9 +240,63 @@ export const Navbar = () => {
                                                   c117.9-117.9,82.9-167.7,82.9-167.7l-2.8-0.1C241.6,182.3,238.2,181.9,233.2,181.5z"
           />
         </svg>
+
         {/* <Icon className={styles.navIcon} icon={'twitter'} /> */}
       </a>
-      {/* {socialLinks.map(({ label, url, icon }) => (
+      <a
+        key={'label'}
+        data-navbar-item={desktop || undefined}
+        className={`${styles.navIconLink} ${styles.codeforces}`}
+        aria-label={'twitter icon'}
+        href={'/'}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        // onMouseMove={handleMouseEnter}
+        // onClick={handleMouseEnter}
+      >
+        <svg
+          class={` ${styles.codeforcesIcon} relative top-4`}
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          viewBox="5 0 14 19"
+          width="100"
+          height="100"
+        >
+          <g>
+            <rect
+              class={styles.red}
+              x="15"
+              width="2"
+              height="6.5"
+              rx="0.7"
+              y="0"
+              fill="#AE0F0A"
+            ></rect>
+            <rect
+              class="blue"
+              x="12"
+              width="2"
+              height="6.5"
+              rx="0.7"
+              y="0"
+              fill="#4F81C1"
+            ></rect>
+            <rect
+              class={styles.yellow}
+              x="9"
+              width="2"
+              height="6.5"
+              rx="0.7"
+              y="0"
+              fill="#FFD400"
+            ></rect>
+          </g>
+        </svg>
+      </a>
+      {socialLinks.map(({ label, url, icon }) => (
         <a
           key={label}
           data-navbar-item={desktop || undefined}
@@ -255,7 +309,7 @@ export const Navbar = () => {
           {console.log(label, url)}
           <Icon className={styles.navIcon} icon={icon} />
         </a>
-      ))} */}
+      ))}
     </div>
   );
 

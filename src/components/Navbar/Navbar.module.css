@@ -129,8 +129,10 @@
   align-items: center;
   justify-content: center;
   padding: var(--spaceS);
-  width: var(--space2XL);
-  height: var(--space2XL);
+  height: 60px;
+  width: 60px;
+  /* width: var(--space2XL);
+  height: var(--space2XL); */
   color: var(--colorTextLight);
   transition: color var(--durationM) var(--bezierFastoutSlowin);
 
@@ -140,10 +142,77 @@
     color: rgb(var(--rgbAccent));
   }
 }
-
+.codeforcesIcon {
+  margin-right: 6px;
+  margin-top: 6px;
+}
+.red {
+  height: 4px;
+  y: 2.5px;
+}
+.yellow {
+  height: 5px;
+  y: 1.5px;
+}
 .navIcon {
   fill: currentColor;
   transition: fill var(--durationM) ease;
+}
+
+.codeforcesIcon {
+  margin-right: 6px;
+  margin-top: 6px;
+}
+
+.codeforcesIcon .red {
+  height: 4px;
+  y: 2.5px;
+}
+.codeforces:hover .red {
+  animation: red-animation 2.5s infinite alternate;
+}
+
+.codeforcesIcon .yellow {
+  height: 5px;
+  y: 1.5px;
+}
+
+.codeforces:hover .yellow {
+  animation: yellow-animation 2s infinite alternate-reverse;
+}
+
+.codeforces:hover .blue {
+  animation: blue-animation 2s infinite alternate;
+}
+
+@keyframes red-animation {
+  0% {
+    y: 0px;
+  }
+  0% {
+    height: 6px;
+    y: 0.5px;
+  }
+}
+
+@keyframes yellow-animation {
+  0% {
+    y: 0px;
+  }
+  0% {
+    height: 6px;
+    y: 0.5px;
+  }
+}
+
+@keyframes blue-animation {
+  0% {
+    y: 0px;
+  }
+  0% {
+    height: 3px;
+    y: 3.5;
+  }
 }
 
 .mobileNav {

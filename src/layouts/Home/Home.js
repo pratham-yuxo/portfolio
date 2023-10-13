@@ -10,7 +10,7 @@
 // import sprTextureLarge from 'assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from 'assets/spr-lesson-builder-dark.jpg';
-import { Footer } from 'components/Footer';
+// import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
 import { Profile } from 'layouts/Home/Profile';
@@ -158,7 +158,7 @@ export const Home = () => {
         visible={visibleSections.includes(details.current)}
         id="details"
       />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
